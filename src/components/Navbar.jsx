@@ -3,7 +3,8 @@ import {FaSearch, FaUser, FaShoppingCart, FaBars, FaTimes} from "react-icons/fa"
 import {Link} from "react-router-dom";
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState([]);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
     }
@@ -12,8 +13,8 @@ const Navbar = () => {
         {title: "Jewelry & Accessories", path: "/"},
         {title: "Clothing & Shoes", path: "/"},
         {title: "Home & Living", path: "/"},
-        {title: "Jewelry & Accessories", path: "/"},
-        {title: "Jewelry & Accessories", path: "/"},
+        {title: "Jewelry & Accessories 2", path: "/"},
+        {title: "Jewelry & Accessories 3", path: "/"},
     ]
 
     return (
@@ -49,14 +50,17 @@ const Navbar = () => {
                 </div>
                 {/*  Categories on Mobile */}
                 <div>
-                    <ul className={`bg-Black text-white px-4 py-2 rounded ${isMenuOpen ? "":"hidden"}`}>
-                        {
-                            navItems.map(({title, path}) => (
-                                <li key={title} className={'hover:text-orange-500 my-3 cursor-pointer'}>
-                                    <Link to={'/'}>{title}</Link>
-                                </li>
-                            ))
-                        }
+                    <ul className={`bg-black text-white px-4 py-2 rounded ${isMenuOpen ? "" : "hidden"}`}>
+                        {navItems.map(({ title, path }) => (
+                            <li key={title} className=" hover:text-orange-500 my-3 cursor-pointer">
+                                <Link
+                                    to={path}
+                                    onClick={toggleMenu}
+                                >
+                                    {title}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </header>

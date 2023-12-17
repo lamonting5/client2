@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const companyLogo = [
-    { id: 1, img: "/public/images/brand/adidas.jpg" },
+    { id: 1, img: "/images/brand/adidas.jpg" },
     { id: 2, img: "/images/brand/colum.jpg" },
     { id: 3, img: "/images/brand/levi.jpg" },
     { id: 4, img: "/images/brand/nike.jpg" },
