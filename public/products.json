@@ -4,7 +4,11 @@
     "title": "Boyer",
     "category": "Shoe",
     "price": "1,335.3",
-    "image":"/images/product/ao1.jpg",
+    "image":[
+      "/images/product/ao1.jpg",
+      "/images/product/ao2.jpg"
+    ],
+    "isNew": true,
     "status": "New Arrival"
   },
   {
@@ -12,7 +16,11 @@
     "title": "Geneva",
     "category": "Shoe",
     "price": "1,783.3",
-    "image":"/images/product/ao2.jpg",
+    "image":[
+      "/images/product/ao3.jpg",
+      "/images/product/ao4.jpg"
+    ],
+    "isNew": true,
     "status": "New Arrival"
   },
   {
@@ -21,6 +29,7 @@
     "category": "Shoe",
     "price": "2,021.3",
     "image":"/images/product/ao3.jpg",
+    "isNew": true,
     "status": "Best Seller"
   },
   {
@@ -28,7 +37,11 @@
     "title": "Nixon",
     "category": "Bag",
     "price": "2,355.9",
-    "image":"/images/product/ao4.jpg",
+    "image":[
+      "/images/product/ao2.jpg",
+      "/images/product/ao1.jpg"
+    ],
+    "isNew": true,
     "status": "New Arrival"
   },
   {
@@ -37,6 +50,7 @@
     "category": "Hoodies",
     "price": 884,
     "image":"/images/product/ao5.jpg",
+    "isNew": true,
     "status": "Best Seller"
   },
   {
@@ -44,7 +58,11 @@
     "title": "Charlene",
     "category": "Dress",
     "price": "2,828.7",
-    "image":"/images/product/ao1.jpg",
+    "image":[
+      "/images/product/ao4.jpg",
+      "/images/product/ao3.jpg"
+    ],
+    "isNew": false,
     "status": "New Arrival"
   },
   {
@@ -53,6 +71,7 @@
     "category": "Shoe",
     "price": "1,445.7",
     "image":"/images/product/ao2.jpg",
+    "isNew": true,
     "status": "Best Seller"
   }
 ]
