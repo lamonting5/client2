@@ -1,0 +1,27 @@
+.datatable {
+  height: 90vh;
+  padding: 10px;
+
+  .cellAction {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    .editBtn {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: rgb(0, 128, 0);
+      border: 1px dotted rgba(0, 128, 0, 0.569);
+      cursor: pointer;
+    }
+
+    .deleteBtn {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: crimson;
+      border: 1px dotted rgba(220, 20, 60, 0.569);
+      cursor: pointer;
+    }
+  }
+}
