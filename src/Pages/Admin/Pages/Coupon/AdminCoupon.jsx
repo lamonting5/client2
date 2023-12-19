@@ -1,7 +1,8 @@
 import React from "react";
+import Datatable from "../../Components/Datatable/Datatable";
 
 const AdminCoupon = () => {
-  return <div>AdminCoupon</div>;
+  return <div><Datatable/></div>;
 };
 
 export default AdminCoupon;

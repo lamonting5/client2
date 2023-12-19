@@ -1,5 +1,12 @@
+import Datatable from "../../Components/Datatable/Datatable";
+
+
 function AdminProduct() {
-  return <div>Admin Product</div>;
+  return (
+    <div>
+      <Datatable />
+    </div>
+  );
 }
 
 export default AdminProduct;

@@ -1,5 +1,8 @@
+import Datatable from "../../Components/Datatable/Datatable";
+
+
 function AdminOrder() {
-  return <div>Admin Order</div>;
+  return <div><Datatable/></div>;
 }
 
 export default AdminOrder;
