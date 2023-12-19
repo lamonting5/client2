@@ -5,63 +5,46 @@ import { FaUserFriends, FaUserCircle } from "react-icons/fa";
 import { IoShirtSharp, IoReceiptSharp, IoLogOut } from "react-icons/io5";
 import { BiSolidCategory } from "react-icons/bi";
 import { RiCoupon2Fill } from "react-icons/ri";
-import { Link } from "react-router-dom";
 function Sidebar() {
   return (
     <div className="admin_sidebar">
       <div className="top">
-        <Link to="/admin">
-          <span className="logo">VTadmin</span>
-        </Link>
+        <span className="logo">VTadmin</span>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/admin">
-            <li>
-              <MdDashboard className="icon" />
-              <span>Dashboard</span>
-            </li>
-          </Link>
+          <li>
+            <MdDashboard className="icon" />
+            <span>Dashboard</span>
+          </li>
           <p className="title">LISTS</p>
-          <Link to="/admin/users">
-            <li>
-              <FaUserFriends className="icon" />
-              <span>Users</span>
-            </li>
-          </Link>
-          <Link to="/admin/products">
-            <li>
-              <IoShirtSharp className="icon" />
-              <span>Products</span>
-            </li>
-          </Link>
-          <Link to="/admin/categories">
-            <li>
-              <BiSolidCategory className="icon" />
-              <span>Categories</span>
-            </li>
-          </Link>
-          <Link to="/admin/coupons">
-            <li>
-              <RiCoupon2Fill className="icon" />
-              <span>Coupons</span>
-            </li>
-          </Link>
-          <Link to="/admin/orders">
-            <li>
-              <IoReceiptSharp className="icon" />
-              <span>Orders</span>
-            </li>
-          </Link>
+          <li>
+            <FaUserFriends className="icon" />
+            <span>Users</span>
+          </li>
+          <li>
+            <IoShirtSharp className="icon" />
+            <span>Products</span>
+          </li>
+          <li>
+            <BiSolidCategory className="icon" />
+            <span>Categories</span>
+          </li>
+          <li>
+            <RiCoupon2Fill className="icon" />
+            <span>Coupons</span>
+          </li>
+          <li>
+            <IoReceiptSharp className="icon" />
+            <span>Orders</span>
+          </li>
           <p className="title">ADMIN</p>
-          <Link to="/admin/profile">
-            <li>
-              <FaUserCircle className="icon" />
-              <span>Profile</span>
-            </li>
-          </Link>
+          <li>
+            <FaUserCircle className="icon" />
+            <span>Profile</span>
+          </li>
           <li>
             <IoLogOut className="icon" />
             <span>Logout</span>
