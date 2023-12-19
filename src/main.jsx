@@ -12,6 +12,7 @@ import AdminOrder from "./Pages/Admin/Pages/Order/AdminOrder.jsx";
 import AdminProduct from "./Pages/Admin/Pages/Product/AdminProduct.jsx";
 import AdminCategory from "./Pages/Admin/Pages/Category/AdminCategory.jsx";
 import AdminUser from "./Pages/Admin/Pages/User/AdminUser.jsx";
+import AdminAuth from "./pages/Admin/AdminAuth/AdminAuth.jsx";
 
 const user = 1;
 
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/products:id",
+        path: "/product/:id",
         element: <Products />,
       },
     ],
