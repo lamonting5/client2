@@ -4,13 +4,14 @@
     "title": "Boyer",
     "category": "Shoe",
     "price": "1,335.3",
-    "image":[
-      "/images/product/ao1.jpg",
-      "/images/product/ao2.jpg"
-    ],
+        "image":[
+          "/images/product/ao1.jpg",
+          "/images/product/ao2.jpg"
+        ],
     "isNew": true,
     "status": "New Arrival"
   },
+
   {
     "id": 1,
     "title": "Geneva",
