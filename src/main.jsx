@@ -6,7 +6,9 @@ import {
 } from "react-router-dom";
 import './index.css'
 import App from "./App.jsx";
-import Home from "./components/home/home.jsx";
+import Home from "./pages/home/home.jsx";
+import Admin from "./pages/Admin/Admin.jsx";
+import Products from "./pages/Products/Products.jsx";
 
 const router = createBrowserRouter([
     {
@@ -16,9 +18,17 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home/>
-            }
+            },
+            {
+                path:"/products:id",
+                element:<Products/>
+            },
         ]
     },
+    {
+        path:"/admin",
+        element:<Admin/>
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
