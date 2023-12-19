@@ -2,13 +2,13 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import Navbar from "./Components/Navbar/Navbar";
 import "./Admin.scss";
 
-function Admin() {
+function Admin({ children }) {
   return (
-    <div className="admin_dashboard">
+    <div className="admin_page">
       <Sidebar />
-      <div className="admin_dashboard_container">
+      <div className="admin_page_container">
         <Navbar />
-        Container
+        {children}
       </div>
     </div>
   );
