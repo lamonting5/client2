@@ -1,93 +1,59 @@
-import React, {useEffect, useState} from 'react';
-import {Link, useParams} from "react-router-dom";
+import React, {useState} from 'react';
 
-import './Product.scss'
-import {CgShoppingCart} from "react-icons/cg";
-import {GrFavorite} from "react-icons/gr";
-import {FaBalanceScale} from "react-icons/fa";
-
+import './Products.scss'
+import List from "../../components/List/List.jsx";
+import {useParams} from "react-router-dom";
 const Products = () => {
-    const [selectedImg, setSelectedImg] = useState(1)
-    const [quantity, setQuantity] = useState(1)
-    //
-    const {id} = useParams()
-    const [products, setProducts] = useState([]);
-    // useEffect(() => {
-    //     // Scroll to the top when the component mounts
-    //     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // }, []);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/products.json");
-                const data = await response.json();
-                const product = data.filter((p) => {
-                    return p.id === parseInt(id);
-                })
-                // console.log(product)
-                setProducts(product[0])
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
 
-        fetchData();
-    }, [id])
-
-    const {title, category, price, images} = products || {};
-    const image = products.image
-    // console.log(image[0])
-
+    const catId = parseInt(useParams().id);
+    const [maxPrice, setMaxPrice] = useState(1000);
+    const [sort, setSort] = useState(null);
     return (
-            <div className="product">
-                <div className="left">
-                    <div className="images">
-                        <img src={image?.[0]} alt={title} onClick={()=>setSelectedImg(0)}/>
-                        <img src={image?.[1]} alt={title} onClick={()=>setSelectedImg(1)}/>
+        <div className={'products'}>
+            <div className="left">
+                <div className="filterItem">
+                    <h2>Product Category</h2>
+                    <div className="inputItem">
+                        <input type="checkbox" id={'1'} value={1}/>
+                        <label htmlFor="1">Shoes</label>
                     </div>
-                    <div className="mainImg">
-                        <img src={image?.[selectedImg]} alt="title"/>
+                    <div className="inputItem">
+                        <input type="checkbox" id={'2'} value={2}/>
+                        <label htmlFor="2">Skirts</label>
+                    </div>
+                    <div className="inputItem">
+                        <input type="checkbox" id={'3'} value={3}/>
+                        <label htmlFor="3">Coats</label>
                     </div>
                 </div>
-                <div className="right">
-                    <h1>{title}</h1>
-                    <span>{price}</span>
-                    <p>Desc</p>
-                    <div className="quantity">
-                        <button onClick={() =>
-                            setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
-                        {quantity}
-                        <button onClick={() =>
-                            setQuantity((prev) => prev + 1)}>+</button>
+                <div className="filterItem">
+                    <h2>Filter by Price</h2>
+                    <div className="inputItem">
+                        <span>0</span>
+                        <input type="range" min={0} max={1000}
+                               onChange={(e) => setMaxPrice(e.target.value)}/>
+                        <span>{maxPrice}</span>
                     </div>
-                    <button className={'add'}>
-                        <CgShoppingCart/>
-                        Add to Cart
-                    </button>
-                    <hr/>
-                    <div className="links">
-                        <div className="item">
-                            <GrFavorite/> Add to Wishlist
-                        </div>
-                        <div className="item">
-                            <FaBalanceScale/> Add to Compare
-                        </div>
+                </div>
+                <div className="filterItem">
+                    <h2>Sort by</h2>
+                    <div className="inputItem">
+                        <input type="radio" id={'asc'} value={'asc'} name={'price'}
+                               onChange={() => setSort("asc")}/>
+                        <label htmlFor={'asc'}> Price (Low to High)</label>
                     </div>
-                    <div className="info">
-                        <span>Vendor: ...</span>
-                        <span>Product Type: {category}</span>
-                        <span>Tag: ...</span>
-                    </div>
-                    <hr/>
-                    <div className="details">
-                        <span className={'my-3'}>Desc2</span>
-                        <hr/>
-                        <span className={'my-3'}>Addition info</span>
-                        <hr/>
-                        <span className={'my-3'}>FAQ</span>
+                    <div className="inputItem">
+                        <input type="radio" id={'desc'} value={'desc'} name={'price'}
+                               onChange={() => setSort("asc")}/>
+                        <label htmlFor={'desc'}> Price (High to Low)</label>
                     </div>
                 </div>
             </div>
+            <div className="right">
+                <img className={'catImg'} src="" alt=""/>
+                <List catId={catId} maxPrice={maxPrice} sort={sort}/>
+            </div>
+        </div>
     );
 };
 

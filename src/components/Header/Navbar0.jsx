@@ -1,8 +1,11 @@
 import {FaChevronDown, FaShoppingCart, FaUser} from "react-icons/fa";
 import {Link} from "react-router-dom";
 import './Navbar0.scss'
+import {useState} from "react";
+import Cart from "../Cart/Cart.jsx";
 
 const Navbar0 = () => {
+    const [cartOpen, setCartOpen] = useState(false);
     return (
         <div className="navbar ">
             <div className="wrapper">
@@ -32,10 +35,10 @@ const Navbar0 = () => {
                     </div>
                     <div className="icons">
                         {/*<FaSearch/>*/}
-                        <FaUser/>
-                        <FaShoppingCart/>
-                        <div className="cartIcon" >
-
+                        <FaUser size={25}/>
+                        <div className="cartIcon" onClick={()=>setCartOpen(!cartOpen)}>
+                            <FaShoppingCart size={25}/>
+                            <span>0</span>
                         </div>
                     </div>
                     <div className="item">
@@ -44,7 +47,7 @@ const Navbar0 = () => {
                     </div>
                 </div>
             </div>
-
+            {cartOpen && <Cart/>}
         </div>
     );
 };

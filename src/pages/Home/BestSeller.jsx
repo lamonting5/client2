@@ -14,7 +14,7 @@ import {Link} from "react-router-dom";
 const BestSeller = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch("products.json")
+        fetch("/products.json")
             .then(res => res.json())
             .then(data => {
             setProducts(data)
