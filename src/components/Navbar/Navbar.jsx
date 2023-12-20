@@ -17,8 +17,8 @@ const Navbar = () => {
         {title: "Women", path: "/products/1"},
         {title: "Men", path: "/products/2"},
         {title: "Kids", path: "/products/3"},
-        {title: "Jewelry & Accessories 2", path: "/"},
-        {title: "Jewelry & Accessories 3", path: "/"},
+        {title: "Jewelry & Accessories 2", path: "/products/4"},
+        {title: "Jewelry & Accessories 3", path: "/products/5"},
     ]
 
     return (

@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import Home from "./pages/home/home.jsx";
+import Home from "./pages/Home/home.jsx";
+import Product from "./pages/Product/Product.jsx";
 import Products from "./pages/Products/Products.jsx";
 import Admin from "./Pages/Admin/Admin.jsx";
 import Dashboard from "./Pages/Admin/Pages/Dashboard/Dashboard.jsx";
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        element: <Products />,
+        element: <Product/>,
+      },
+      {
+        path: "/products/:id",
+        element: <Products/>,
       },
     ],
   },
