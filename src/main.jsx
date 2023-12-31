@@ -27,11 +27,11 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/product/:id",
+        path: "/women/:id",
         element: <Product/>,
       },
       {
-        path: "/products/:id",
+        path: "/women",
         element: <Products/>,
       },
     ],
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element:
-      user == 1 ? (
+      user === 1 ? (
         <Admin>
           <Dashboard />
         </Admin>

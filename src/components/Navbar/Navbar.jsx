@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import Navbar0 from "../Header/Navbar0.jsx";
 import './Navbar.scss'
 import SubNav from "./SubNav.jsx";
+import BasicBreadcrumbs from "../BreadCrumbs/BreadCrumbs.jsx";
+import products from "../../Pages/Products/Products.jsx";
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -54,6 +56,7 @@ const Navbar = () => {
                     </nav>
                 </div>
                 <SubNav/>
+                <BasicBreadcrumbs producting={products}/>
             </header>
         </>
 

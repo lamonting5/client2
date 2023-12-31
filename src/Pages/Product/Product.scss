@@ -1,132 +1,74 @@
 .product {
-  padding: 20px 50px;
-  display: flex;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem,100%),1fr));
+  place-items: start center;
+  gap: 2rem;
+  width: 80vw;
+  padding-top: 2.5rem;
+  margin: 0 auto;
 
-  //.left {
-  //  flex: 2;
-  //  display: flex;
-  //  gap: 20px;
-  //  .images1 {
-  //    flex: .5;
-  //
-  //    img{
-  //      width: 100%;
-  //      height: 100px;
-  //      object-fit: cover;
-  //      cursor: pointer;
-  //      margin-bottom: 10px;
-  //    }
-  //  }
-  //  .images2 {
-  //    flex: .5;
-  //
-  //    img{
-  //      width: 100%;
-  //      height: 100px;
-  //      object-fit: cover;
-  //      cursor: pointer;
-  //      margin-bottom: 10px;
-  //    }
-  //  }
-  //  .mainImg {
-  //    flex: 4;
-  //
-  //    img{
-  //      width: 100%;
-  //      height: 100%;
-  //      object-fit: cover;
-  //    }
-  //  }
-  //}
   .left {
-    flex: 2;
-    display: -ms-flexbox; /* IE10 */
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
     padding: 0 4px;
-    gap: 20px;
     .images1 {
-      //-ms-flex: .5; /* IE10 */
-      //flex: .5;
-      max-width: 35%;
-      max-height: 100vh;
+      width: auto;
+      max-height: 80vh;
       padding: 0 4px;
+      //gap: 10px;
 
-      //display: flex;
-      //flex-wrap: wrap;
-      gap: 10px;
+      //display: grid;
+      //grid-template-columns: repeat(2, 1fr);
 
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-      img{
-        //width: 100%;
-        //object-fit: cover;
-        //cursor: pointer;
-        //margin-bottom: 10px;
-
-        //margin-top: 8px;
-        //vertical-align: middle;
-        //width: 100%;
-
+      img {
         object-fit: cover;
-        width: 50%; /* Two images per row for a two-column layout */
-        height: auto; /* Maintains aspect ratio */
+        width: 50%;
+        height: auto;
       }
     }
-    //.images2 {
-    //  -ms-flex: .5; /* IE10 */
-    //  flex: .5;
-    //  max-width: 25%;
-    //  padding: 0 4px;
-    //  img{
-    //    //width: 100%;
-    //    //object-fit: cover;
-    //    //cursor: pointer;
-    //    //margin-bottom: 10px;
-    //
-    //    margin-top: 8px;
-    //    vertical-align: middle;
-    //    width: 100%;
-    //  }
-    //}
-    .mainImg {
-      flex: 4;
 
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    .mainImg {
+      //flex: 4;
+
+      img {
+        //height: auto;
+        //-o-object-fit: cover;
+        //object-fit: cover;
+        //position: absolute;
+
+        .bigImage{
+          margin-left: 10rem;
+        }
       }
     }
   }
+
   .right {
     flex: 1.5;
     display: flex;
     flex-direction: column;
     gap: 30px;
 
-    .price{
+    .price {
       font-size: 30px;
       color: #2879fe;
       font-weight: 500;
     }
 
-    p{
+    p {
       font-size: 18px;
       font-weight: 300;
       text-align: justify;
     }
 
-    .quantity{
+    .quantity {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 1rem;
 
-      button{
-        width: 50px;
-        height: 50px;
+      button {
+        width: 3.5rem;
+        height: 3.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -136,7 +78,7 @@
       }
     }
 
-    .add{
+    .add {
       width: 250px;
       padding: 10px;
       background-color: #2879fe;
@@ -150,20 +92,32 @@
       font-weight: 500;
     }
 
-    .links{
+    .links {
       display: flex;
-      gap: 20px;
+      gap: 1.5rem;
 
-      .item{
+      .item {
         display: flex;
         align-items: center;
         gap: 10px;
         color: #2879fe;
-        font-size: 14px;
       }
     }
 
-    .info{
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      color: gray;
+
+
+      hr {
+        width: 200px;
+        border: 1px solid lightgray;
+      }
+    }
+
+    .details {
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -171,50 +125,33 @@
       font-size: 14px;
       margin-top: 30px;
 
-      hr{
+      hr {
         width: 200px;
         border: 1px solid lightgray;
       }
     }
-    .details{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      color: gray;
-      font-size: 14px;
-      margin-top: 30px;
-      hr{
-        width: 200px;
-        border: 1px solid lightgray;
-      }
-    }
-    hr{
+
+    hr {
       margin-bottom: 5px;
       margin-top: 5px;
       border: 1px solid lightgray;
     }
-
   }
-
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (min-width: 768px) {
-    .images1 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
-      gap: 10px; /* Adjust the gap between images as needed */
-      img {
-        width: 100%; /* Ensures images fill their respective grid cells */
-        height: auto; /* Maintains aspect ratio */
-      }
-    }
-  }
-
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  //@media screen and (max-width: 600px) {
-  //  .images1 {
-  //    -ms-flex: 100%;
-  //    flex: 100%;
-  //    max-width: 100%;
-  //  }
-  //}
 }
+
+//@media (max-width: 640px) {
+//  .product {
+//
+//    .left {
+//      flex: 2;
+//      gap: 20px;
+//      .images1 {
+//        gap: 20px;
+//      }
+//    }
+//
+//    .right {
+//      flex: 1.5;
+//    }
+//  }
+//}
