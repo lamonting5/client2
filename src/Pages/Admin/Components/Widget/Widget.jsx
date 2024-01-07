@@ -4,9 +4,24 @@ import { FaUserFriends } from "react-icons/fa";
 import { IoShirt, IoReceipt } from "react-icons/io5";
 import { GiReceiveMoney } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axiosClient from "../../../../api/axiosClient";
 
 function Widget({ type }) {
+  const [datas, setDatas] = useState([]);
   let data;
+
+  console.log(datas);
+  useEffect(() => {
+    async function getDatas() {
+      const res = await axiosClient.get(
+        type !== "profit" ? `${type}/${type}s` : ""
+      );
+      setDatas(res.data);
+    }
+
+    getDatas();
+  }, []);
 
   switch (type) {
     case "user":
@@ -85,7 +100,10 @@ function Widget({ type }) {
     <div className="widget">
       <div className="left">
         <span className="title">{data.title}</span>
-        <span className="counter">105{data.isMoney ? "$" : ""}</span>
+        <span className="counter">
+          {datas.length}
+          {data.isMoney ? "$" : ""}
+        </span>
         <Link to={data.route}>
           <span className="link">{data.link}</span>
         </Link>

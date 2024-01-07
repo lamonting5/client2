@@ -5,8 +5,18 @@ import { FaUserFriends, FaUserCircle } from "react-icons/fa";
 import { IoShirtSharp, IoReceiptSharp, IoLogOut } from "react-icons/io5";
 import { BiSolidCategory } from "react-icons/bi";
 import { RiCoupon2Fill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../../../../redux/adminSlice";
+
 function Sidebar() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
   return (
     <div className="admin_sidebar">
       <div className="top">
@@ -62,17 +72,13 @@ function Sidebar() {
               <span>Profile</span>
             </li>
           </Link>
-          <li>
+          <li onClick={handleLogout}>
             <IoLogOut className="icon" />
             <span>Logout</span>
           </li>
         </ul>
       </div>
-      <div className="bottom">
-        <div className="colorOption" />
-        <div className="colorOption" />
-        <div className="colorOption" />
-      </div>
+      
     </div>
   );
 }

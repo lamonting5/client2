@@ -12,8 +12,7 @@ const FeaturedProducts = ({type}) => {
                 setProducts(data)
             })
     }, [])
-    const News = products.filter((item) => item.status === true).slice(0,3)
-    console.log(News)
+    const News = products.filter((item) => item.status === true).slice(0,2)
     return (
         <div className={'featuredProducts'}>
             <div className="top">

@@ -1,65 +1,41 @@
-import React, {useState} from 'react';
-import {FaBars, FaTimes} from "react-icons/fa";
-import {Link} from "react-router-dom";
-import Navbar0 from "../Header/Navbar0.jsx";
-import './Navbar.scss'
+import React from "react";
+import { LuUser2 } from "react-icons/lu";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
+import { RiShoppingBag3Line } from "react-icons/ri";
+import "./Navbar.scss";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import SubNav from "./SubNav.jsx";
-import BasicBreadcrumbs from "../BreadCrumbs/BreadCrumbs.jsx";
-import products from "../../Pages/Products/Products.jsx";
+import logo from '/images/logo.png'
+
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
-
-    const navItems = [
-        {title: "New in", path: "/products/1"},
-        {title: "Clothing", path: "/products/2"},
-        {title: "Dresses", path: "/products/3"},
-        {title: "Shoes", path: "/products/4"},
-        {title: "Accessories", path: "/products/5"},
-    ]
-
+    const user = useSelector((state) => state.user.user);
     return (
-        <>
-            {/*<header className={'max-w-screen-2xl xl:px-28 px-4'}>*/}
-            <header className={'xl:px-48 pb-3'}>
-                <Navbar0/>
-
-                {/*Nav for small devices*/}
-                <div className={'md:hidden flex flex-row center justify-between mx-10 my-3 mt-5'}>
-                    <div className="center">
-                        <Link className ="link" to="/">VietTungSTORE</Link>
+        <div className="navbar">
+            <div className="main_nav">
+                <Link to={"/"}><img src={logo} alt="brand_logo" className="brand_logo"/></Link>
+                <div className="main_nav_actions">
+                <div className="action">
+                        <MdOutlineFavoriteBorder className="icon" />
+                        <h3>Yêu thích</h3>
                     </div>
-                    <button onClick={toggleMenu}>
-                        {
-                            isMenuOpen ? <FaTimes className={'w-7 h-7 text-Black'}/> : <FaBars className={'w-7 h-7 text-Black'}/>
-                        }
-                    </button>
+                    <div className="action">
+                        <RiShoppingBag3Line className="icon" />
+                        <h3>Giỏ hàng ({0})</h3>
+                    </div>
+                    <Link to={user ? "/profile" : "/auth"}>
+                        <div className="action">
+                            <LuUser2 className="icon" />
+                            <h3>{user ? user.user.username : "Đăng nhập"}</h3>
+                        </div>
+                    </Link>
                 </div>
-                <hr className={'md:mx-10'}/>
-
-                {/*Categories on md*/}
-                <div>
-                    <nav className={`menuBaring ${isMenuOpen ? "menuBar" : "hidden"}`}>
-                        {navItems.map(({ title, path }) => (
-                            <li key={title} className=" hover:text-orange-500 my-3 cursor-pointer">
-                                <Link
-                                    to={path}
-                                    onClick={toggleMenu}
-                                >
-                                    {title}
-                                </Link>
-                            </li>
-                        ))}
-                    </nav>
-                </div>
+            </div>
+            <div className="sub_nav">
                 <SubNav/>
-                <BasicBreadcrumbs producting={products}/>
-            </header>
-        </>
-
+            </div>
+            {/*<BasicBreadcrumbs/>*/}
+        </div>
     );
 };
 

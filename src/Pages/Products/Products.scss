@@ -6,14 +6,12 @@
   width: 80vw;
   //padding-top: 2.5rem;
   margin: 0 auto;
+  padding-top: 5rem;
 
   .left {
     grid-column: 1 / span 1;
-    flex: initial;
     position: sticky;
-    height: 100%;
-    padding-right: 3rem;
-
+    height: fit-content;
     .filterItem{
       margin-bottom: 30px;
 
@@ -35,18 +33,21 @@
     grid-column: 2 / span 4;
     flex: 3;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    width: 100%;
+
     .ancestralRow{
       flex: 1;
       row-gap: 3rem;
+      width: 100%;
     }
     .firstRow{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      width: 100%;
-      margin-top: 1.5rem;
+
+
       .catImg{
         width: 100%;
         height: 300px;
@@ -54,14 +55,11 @@
         margin-bottom: 50px;
       }
       .link{
-        height: 37rem;
         .card1{
-          width: 280px;
+          flex: 1;
           display: flex;
           flex: initial;
           flex-direction: column;
-          gap: 10px;
-          margin-bottom: 50px;
 
           .image{
             width: 100%;
@@ -106,13 +104,12 @@
           }
 
           .prices{
-            display: flex;
-            gap: 1.5rem;
+            display: grid;
+            grid-template-rows: repeat(auto-fit, minmax(min(1rem,100%),1fr));
+            margin-left: 3rem;
             h3{
               font-size: 1.2rem;
               font-weight: 500;
-              margin-bottom: 1rem;
-              margin-left: 2rem;
             }
           }
 
@@ -141,5 +138,13 @@
 
       }
   }
+  }
+
+  .prodName{
+    height: 5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

@@ -8,8 +8,12 @@ import {FaBalanceScale} from "react-icons/fa";
 import {StarIcon} from "@heroicons/react/20/solid/index.js";
 import {RadioGroup} from "@headlessui/react";
 import {Avatar, Chip, Stack} from "@mui/material";
+import Transition from "../../transition.jsx";
+
+
 
 const Product = () => {
+
     const defaultProduct = {
         colors: [
             { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
@@ -33,10 +37,7 @@ const Product = () => {
 
     // const [selectedImg, setSelectedImg] = useState(1)
     const [quantity, setQuantity] = useState(1)
-    //
     const {id} = useParams()
-    // const {idByName} = useParams()
-    // console.log(idByName)
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -170,7 +171,7 @@ const Product = () => {
                             </div>
                         </RadioGroup>
                     </div>
-                    <hr className={'pt-3'}/>
+
                     {/* Sizes */}
                     <div className="mt-10">
                         <div className="flex items-center justify-between">
@@ -260,4 +261,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default Transition(Product);

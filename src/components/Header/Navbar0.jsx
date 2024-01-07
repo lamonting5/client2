@@ -24,15 +24,15 @@ const Navbar0 = () => {
                     <Link className ="link" to="/">VietTungSTORE</Link>
                 </div>
                 <div className="right">
-                    <div className="item">
-                        <Link className ="link" to="/">Homepage</Link>
-                    </div>
-                    <div className="item">
-                        <Link className ="link" to="/">About</Link>
-                    </div>
-                    <div className="item">
-                        <Link className ="link" to="/">Contact</Link>
-                    </div>
+                    {/*<div className="item">*/}
+                    {/*    <Link className ="link" to="/">Homepage</Link>*/}
+                    {/*</div>*/}
+                    {/*<div className="item">*/}
+                    {/*    <Link className ="link" to="/">About</Link>*/}
+                    {/*</div>*/}
+                    {/*<div className="item">*/}
+                    {/*    <Link className ="link" to="/">Contact</Link>*/}
+                    {/*</div>*/}
                     <div className="icons">
                         {/*<FaSearch/>*/}
                         <FaUser size={25}/>
